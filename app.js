@@ -41,11 +41,10 @@
 
     function scale() {
         scaleValue = zoomState ? 1.01 : 0.99;
-        if (scalingCounter === 60)  {
+        if (scalingCounter++ === 60)  {
             zoomState = !zoomState;
             scalingCounter = 0;
         }
-        scalingCounter++;
         platypusCtx.scale(scaleValue, scaleValue);
     }
 })();
